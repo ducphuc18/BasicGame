@@ -13,6 +13,8 @@ namespace PHUC.BasicGame
         private Player player;
         private bool m_isdead;
         private Gamenanager M_gameManager;
+        public int minCoinBonus;
+        public int maxCoinBonus;
         void Start()
         {
             m_amin = GetComponent<Animator>();
@@ -24,7 +26,7 @@ namespace PHUC.BasicGame
         // Update is called once per frame
         void Update()
         {
-            if (player == null) return;
+            if (iscomponent()) return;
             if(Vector2.Distance(player.transform.position, m_amin.transform.position) <= actDistace)
             {
                 m_rigid.velocity = Vector2.zero;
@@ -35,15 +37,23 @@ namespace PHUC.BasicGame
                 m_rigid.velocity = new Vector2(-speed, 0);
             }
         }
+        public bool iscomponent()
+        {
+            return m_amin == null || m_rigid == null || M_gameManager == null;
+        }    
         public void Die()
         {
-            if(!m_isdead)
+            if(!m_isdead )
             {
                 m_amin.SetTrigger(ConstClass.Dead_Amin);
                 m_rigid.velocity = Vector2.zero;
                 gameObject.layer = LayerMask.NameToLayer(ConstClass.Dead_Layer);
                 m_isdead = true;
                 M_gameManager.score++;
+                
+                int coinBonus = Random.Range(minCoinBonus,maxCoinBonus);
+                Playerpref.coins += coinBonus;
+               
                 Destroy(gameObject, 2);
             }    
            
