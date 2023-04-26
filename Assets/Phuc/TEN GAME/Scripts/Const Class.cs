@@ -19,5 +19,6 @@ namespace PHUC.BasicGame
         public const string Coin_Pref = "coins";
         public const string Music_Vol_Pref = "Music_Vol";
         public const string Sound_Vol_Pref = "Sound_Vol";
+        public const string Gameplay_Scene = "gameplay";
     }
 }

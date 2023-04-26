@@ -4,18 +4,20 @@ using UnityEngine;
 
 namespace PHUC.BasicGame
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour,IcomponentChecking
     {
         private Animator m_amin;
         public float actRate;
         private float curActRate;
         bool isattacked;
         bool isdead;
+        private Gamenanager m_gameManager;
         // Start is called before the first frame update
         void Start()
         {
             m_amin = GetComponent<Animator>();
             curActRate = actRate;
+            m_gameManager = FindObjectOfType<Gamenanager>();
         }
 
         // Update is called once per frame
@@ -41,6 +43,10 @@ namespace PHUC.BasicGame
                 }
             }
         }
+        public bool iscomponentNull()
+        {
+            return m_amin == null || m_gameManager == null;
+        }    
         public void resetAtackAmin()
         {
             m_amin.SetBool(ConstClass.Attack_Amin, false);
@@ -52,6 +58,7 @@ namespace PHUC.BasicGame
                 m_amin.SetTrigger(ConstClass.Dead_Amin);
                 isdead = true;
                 gameObject.layer = LayerMask.NameToLayer(ConstClass.Dead_Layer);
+                m_gameManager.GameOver();
             }
         }
     }

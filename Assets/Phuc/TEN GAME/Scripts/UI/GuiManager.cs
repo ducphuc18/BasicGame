@@ -17,11 +17,11 @@ namespace PHUC.BasicGame
         {
             if(homeGui)
             {
-                gameObject.SetActive(isshow);
+                homeGui.SetActive(!isshow);
             } 
             if(gameGui)
             {
-                gameGui.SetActive(!isshow);
+                gameGui.SetActive(isshow);
             }    
         }  
         public void UpdateMainCoins()

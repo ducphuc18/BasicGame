@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PHUC.BasicGame
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour,IcomponentChecking
     {
         public float speed;
         private Rigidbody2D m_rigid;
@@ -15,6 +15,7 @@ namespace PHUC.BasicGame
         private Gamenanager M_gameManager;
         public int minCoinBonus;
         public int maxCoinBonus;
+        
         void Start()
         {
             m_amin = GetComponent<Animator>();
@@ -26,7 +27,7 @@ namespace PHUC.BasicGame
         // Update is called once per frame
         void Update()
         {
-            if (iscomponent()) return;
+            if (iscomponentNull()) return;
             if(Vector2.Distance(player.transform.position, m_amin.transform.position) <= actDistace)
             {
                 m_rigid.velocity = Vector2.zero;
@@ -37,7 +38,7 @@ namespace PHUC.BasicGame
                 m_rigid.velocity = new Vector2(-speed, 0);
             }
         }
-        public bool iscomponent()
+        public bool iscomponentNull()
         {
             return m_amin == null || m_rigid == null || M_gameManager == null;
         }    
@@ -53,6 +54,10 @@ namespace PHUC.BasicGame
                 
                 int coinBonus = Random.Range(minCoinBonus,maxCoinBonus);
                 Playerpref.coins += coinBonus;
+                if(M_gameManager.guiManager)
+                {
+                    M_gameManager.guiManager.UpdateGamePLayCoins();
+                }    
                
                 Destroy(gameObject, 2);
             }    

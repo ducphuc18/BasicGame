@@ -876,6 +876,7 @@ GameObject:
   - component: {fileID: 200223866}
   - component: {fileID: 200223868}
   - component: {fileID: 200223867}
+  - component: {fileID: 200223869}
   m_Layer: 5
   m_Name: pauseDialogue
   m_TagString: Untagged
@@ -943,6 +944,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200223865}
   m_CullTransparentMesh: 1
+--- !u!114 &200223869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200223865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e879dc5c3ecdf348a50bde96e3ea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 0}
+  contentText: {fileID: 0}
 --- !u!1 &204994603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2609,7 @@ MonoBehaviour:
   - {fileID: 748697740, guid: 956469c8711913a4d9789f4445451e41, type: 3}
   - {fileID: 858673857, guid: 1fa0f0c98c316404c83eb5c1a4e70004, type: 3}
   - {fileID: 389829017, guid: abc218a63ed57464e968e0fd80cdff87, type: 3}
+  guiManager: {fileID: 1145936516}
 --- !u!4 &696022867
 Transform:
   m_ObjectHideFlags: 0
@@ -2889,7 +2905,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 818056743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1257245235}
+        m_TargetAssemblyTypeName: PHUC.BasicGame.Gameoverdialogue, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &818056743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3705,7 +3733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeGui: {fileID: 1950327761}
   gameGui: {fileID: 833584110}
-  gameOverDialogue: {fileID: 0}
+  gameOverDialogue: {fileID: 1257245235}
   mianCoinText: {fileID: 134262358}
   gamePlayCoinText: {fileID: 404110963}
 --- !u!4 &1145936517
@@ -4144,6 +4172,7 @@ GameObject:
   - component: {fileID: 1257245232}
   - component: {fileID: 1257245234}
   - component: {fileID: 1257245233}
+  - component: {fileID: 1257245235}
   m_Layer: 5
   m_Name: GameOverdialogue
   m_TagString: Untagged
@@ -4210,6 +4239,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257245231}
   m_CullTransparentMesh: 1
+--- !u!114 &1257245235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257245231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4c3379271411b4a95bfa3d4596bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 0}
+  contentText: {fileID: 0}
+  bestScoreText: {fileID: 608106927}
 --- !u!1 &1324631717
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,7 +4271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324631718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5712,7 +5756,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1698692174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 200223869}
+        m_TargetAssemblyTypeName: PHUC.BasicGame.PauseDialogue, Assembly-CSharp
+        m_MethodName: show
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1698692174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5987,7 +6043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1712961535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 696022866}
+        m_TargetAssemblyTypeName: PHUC.BasicGame.Gamenanager, Assembly-CSharp
+        m_MethodName: playGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1712961535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6422,7 +6490,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1831201244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 200223869}
+        m_TargetAssemblyTypeName: PHUC.BasicGame.PauseDialogue, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1831201244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6544,7 +6624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1874591113}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 200223869}
+        m_TargetAssemblyTypeName: PHUC.BasicGame.PauseDialogue, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1874591113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6840,7 +6932,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954737851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1257245235}
+        m_TargetAssemblyTypeName: PHUC.BasicGame.Gameoverdialogue, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954737851
 MonoBehaviour:
   m_ObjectHideFlags: 0
