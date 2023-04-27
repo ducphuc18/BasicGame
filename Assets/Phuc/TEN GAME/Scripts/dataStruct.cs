@@ -10,5 +10,7 @@ namespace PHUC.BasicGame
         public Player playerPref;
         public int price;
         public Sprite previewImg;
+
+       
     }
 }

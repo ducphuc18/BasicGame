@@ -26,9 +26,9 @@ namespace PHUC.BasicGame
                 string dataKey = ConstClass.Player_Prefix_Pref + i;
                 if(i == 0)
                 {
-                  Playerpref.setBool(dataKey, true);
+                  Playerpref.setBool(dataKey, true); // da mo khoa boss 1
                 }
-                else
+                else // con lai chua mo khoa
                 {
                     if(!PlayerPrefs.HasKey(dataKey))
                     {
