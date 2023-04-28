@@ -13,7 +13,7 @@ namespace PHUC.BasicGame
         public Text mianCoinText;
         public Text gamePlayCoinText;
 
-        public void ShowGameGUI(bool isshow)
+        public void ShowGameGUI(bool isshow)// hien thi homegui hay gamehui
         {
             if(homeGui)
             {

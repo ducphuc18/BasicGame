@@ -45,7 +45,7 @@ namespace PHUC.BasicGame
         }
         public bool iscomponentNull()
         {
-            return m_amin == null || m_gameManager == null;
+            return m_amin == null || m_gameManager == null ;
         }    
         public void resetAtackAmin()
         {

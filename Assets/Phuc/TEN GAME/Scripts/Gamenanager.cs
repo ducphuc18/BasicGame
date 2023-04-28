@@ -11,7 +11,7 @@ namespace PHUC.BasicGame
         public GuiManager guiManager;
         private bool isGameOver;
         private int m_score;
-        public int score { get => m_score; set => m_score = value; }
+        public int score { get => m_score; set => m_score = value; }//score = m_score
         void Start()
         {
             
@@ -25,6 +25,7 @@ namespace PHUC.BasicGame
             StartCoroutine(SpawnEnemy());
             guiManager.ShowGameGUI(true);
             guiManager.UpdateGamePLayCoins();
+           
         }
         public void GameOver()
         {

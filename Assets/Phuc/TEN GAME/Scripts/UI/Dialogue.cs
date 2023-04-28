@@ -13,7 +13,7 @@ namespace PHUC.BasicGame
         {
             gameObject.SetActive(isshow);
         } 
-        public virtual void UpdateDialogue(string tittle,string content)
+        public virtual void UpdateDialogue(string tittle,string content) // cap nhap hop thoai
         {
             if(titleText)
             {

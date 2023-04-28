@@ -52,11 +52,11 @@ namespace PHUC.BasicGame
                 m_isdead = true;
                 M_gameManager.score++;
                 
-                int coinBonus = Random.Range(minCoinBonus,maxCoinBonus);
-                Playerpref.coins += coinBonus;
+                int coinBonus = Random.Range(minCoinBonus,maxCoinBonus);//tao diem giet quai
+                Playerpref.coins += coinBonus;// cong don vao value coin trong pref
                 if(M_gameManager.guiManager)
                 {
-                    M_gameManager.guiManager.UpdateGamePLayCoins();
+                    M_gameManager.guiManager.UpdateGamePLayCoins();//cap nhap len UI
                 }    
                
                 Destroy(gameObject, 2);

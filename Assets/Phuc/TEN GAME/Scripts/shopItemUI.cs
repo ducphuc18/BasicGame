@@ -11,19 +11,19 @@ namespace PHUC.BasicGame
         public Image hud;
         public Button button;
 
-        public void UpdateUI(shopItem item, int itemIndex)
+        public void UpdateUI(shopItem item, int itemIndex )
         {
             if (item == null) return;
             if(hud)
             {
-                hud.sprite = item.previewImg;
+                hud.sprite = item.previewImg;// gan hinh boss tu shopitem sang 
             }
             bool isunlocked = Playerpref.getBool(ConstClass.Player_Prefix_Pref + itemIndex); // xem mo khoa hay chua ? // player_1
-            
+            //Debug.Log(ConstClass.Player_Prefix_Pref + itemIndex);
            // tiep den kiem tra 2 truong hop mo khoa hay chua
            if(isunlocked) // neu da mo khoa
             {
-                if(Playerpref.curPlayerId == itemIndex) // neu chi so player hien tai dc chon bang chi so item
+                if(Playerpref.curPlayerId == itemIndex) // neu chi so player hien tai dc chon bang chi so item // vi Playerpref.curPlayerId ko gia tri nen mac dinh = 0
                 {
                     if(priceText)
                     {
