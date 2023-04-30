@@ -11,10 +11,13 @@ namespace PHUC.BasicGame
         public GuiManager guiManager;
         private bool isGameOver;
         private int m_score;
+        private  Player m_curPlayer;
+        public shopManager m_shopManager;
+        public AudioController audioController;
         public int score { get => m_score; set => m_score = value; }//score = m_score
         void Start()
         {
-            
+           
             if (iscomponentNull()) { return; }
             guiManager.ShowGameGUI(false);
             guiManager.UpdateMainCoins();
@@ -22,10 +25,13 @@ namespace PHUC.BasicGame
         }
         public void playGame()
         {
+            if(iscomponentNull()) { return; }
+            ActivePlayer();
             StartCoroutine(SpawnEnemy());
             guiManager.ShowGameGUI(true);
             guiManager.UpdateGamePLayCoins();
-           
+            audioController.BackGroundMusic();
+            
         }
         public void GameOver()
         {
@@ -36,6 +42,7 @@ namespace PHUC.BasicGame
             {
                 guiManager.gameOverDialogue.show(true);
             }
+            audioController.PlaySound(audioController.gameOver);
             
         }
 
@@ -55,10 +62,25 @@ namespace PHUC.BasicGame
                 yield return new WaitForSeconds(spawnTime);
             }    
             
+        }
+        public void ActivePlayer()
+        {
+            if (iscomponentNull()) return;
+            if (m_curPlayer != null)
+            {
+                Destroy(m_curPlayer.gameObject);
+            }
+            var shopItems = m_shopManager.items;
+            if (shopItems == null || shopItems.Length <= 0) return;
+            var newPlayerPb = shopItems[Playerpref.curPlayerId].playerPref;
+            if(newPlayerPb != null)
+            {
+                m_curPlayer = Instantiate(newPlayerPb, new Vector3(-7.29f,-0.29f,0f),Quaternion.identity);
+            }    
         }    
         public bool iscomponentNull()
         {
-            return guiManager == null;
+            return guiManager == null || m_shopManager == null || audioController == null;
         }    
     }
 }

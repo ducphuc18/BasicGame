@@ -43,6 +43,13 @@ namespace PHUC.BasicGame
                 }
             }
         }
+        public void PlayAttackSound()
+        {
+            if(m_gameManager.audioController)
+            {
+                m_gameManager.audioController.PlaySound(m_gameManager.audioController.playerAttackSound);
+            }    
+        }    
         public bool iscomponentNull()
         {
             return m_amin == null || m_gameManager == null ;

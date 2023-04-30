@@ -60,6 +60,10 @@ namespace PHUC.BasicGame
                 }    
                
                 Destroy(gameObject, 2);
+                if(M_gameManager.audioController)
+                {
+                    M_gameManager.audioController.PlaySound(M_gameManager.audioController.enemyDeadSound);
+                }    
             }    
            
         }    
