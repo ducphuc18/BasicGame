@@ -34,12 +34,12 @@ namespace PHUC.BasicGame
         public static float musicVol
         {
             set => PlayerPrefs.SetFloat(ConstClass.Music_Vol_Pref, value);
-            get => PlayerPrefs.GetFloat(ConstClass.Music_Vol_Pref, 0);
+            get => PlayerPrefs.GetFloat(ConstClass.Music_Vol_Pref, 0.3f);
         }
         public static float soundVol
         {
             set => PlayerPrefs.SetFloat(ConstClass.Sound_Vol_Pref,value);
-            get => PlayerPrefs.GetFloat (ConstClass.Sound_Vol_Pref, 0);
+            get => PlayerPrefs.GetFloat (ConstClass.Sound_Vol_Pref, 1f);
         }
         public static void setBool(string key, bool value)
         {
