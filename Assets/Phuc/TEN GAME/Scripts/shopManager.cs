@@ -7,6 +7,7 @@ namespace PHUC.BasicGame
     public class shopManager : MonoBehaviour
     {
        public shopItem[] items;
+        
         void Start()
         {
             Init();
@@ -27,6 +28,8 @@ namespace PHUC.BasicGame
                 if(i == 0)
                 {
                   Playerpref.setBool(dataKey, true); // da mo khoa boss 1 // set la da mo khoa
+                   
+                 
                 }
                 else // con lai chua mo khoa
                 {

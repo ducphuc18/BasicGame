@@ -17,11 +17,14 @@ namespace PHUC.BasicGame
         public int score { get => m_score; set => m_score = value; }//score = m_score
         void Start()
         {
-           
+            
+
             if (iscomponentNull()) { return; }
             guiManager.ShowGameGUI(false);
             guiManager.UpdateMainCoins();
-              
+            
+
+
         }
         public void playGame()
         {

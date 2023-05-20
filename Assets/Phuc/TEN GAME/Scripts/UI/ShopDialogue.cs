@@ -13,20 +13,23 @@ namespace PHUC.BasicGame
         public shopItemUI itemUiPrefab;
         private shopManager m_shopManager;
         private Gamenanager m_gamenanager;
+        
+        
 
         public override void show(bool isshow)
         {
-            Playerpref.coins = 10000;
+           
             base.show(isshow);
             m_shopManager = FindObjectOfType<shopManager>();
             m_gamenanager = FindObjectOfType<Gamenanager>();
             UpdateUI();
+            
         }
 
         private void UpdateUI()
         {
             if (iscomponentNull()) return;
-            ClearChild();
+            ClearChild();//xoa het con ben trong content
             var items = m_shopManager.items; // danh sach chua phan tu boss
             if (items == null || items.Length <=0)return;
             for(int i = 0; i < items.Length; i++)
@@ -60,6 +63,7 @@ namespace PHUC.BasicGame
                 //Debug.Log(Playerpref.curPlayerId);
                 m_gamenanager.ActivePlayer();
                 UpdateUI();// ve lai shop
+                
             }
             else if(Playerpref.coins >= item.price)
             {
@@ -72,6 +76,7 @@ namespace PHUC.BasicGame
                     m_gamenanager.guiManager.UpdateMainCoins();
                 }
                 m_gamenanager.ActivePlayer();
+              
             }
             else
             {

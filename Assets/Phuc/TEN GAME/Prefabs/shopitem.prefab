@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4048261458525024546}
   - component: {fileID: 4048261458525024548}
   - component: {fileID: 4048261458525024547}
+  - component: {fileID: 2804680828387940438}
   m_Layer: 5
   m_Name: Checkmask
   m_TagString: Untagged
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2804680828387940438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048261458525024545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37a40d82eec1f348ab04ae76a7a0da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4048261458547202409
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +413,7 @@ MonoBehaviour:
   priceText: {fileID: 4048261459466192577}
   hud: {fileID: 4048261458547202411}
   button: {fileID: 5080038471112155061}
+  TickBoss: {fileID: 2804680828387940438}
 --- !u!1 &4048261460260378355
 GameObject:
   m_ObjectHideFlags: 0

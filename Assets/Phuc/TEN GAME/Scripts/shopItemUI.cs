@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace PHUC.BasicGame
         public Text priceText;
         public Image hud;
         public Button button;
+        public TickBoss TickBoss;
 
         public void UpdateUI(shopItem item, int itemIndex )
         {
@@ -28,11 +30,15 @@ namespace PHUC.BasicGame
                     if(priceText)
                     {
                         priceText.text = "ACTIVE"; // dang su dung // neu mo khoa va duoc lua chon
+                       
                     }    
                 } else if(priceText)
                 {
                     priceText.text = "OWNED"; // neu mo khoa va khong duoc lua chon
-                }    
+                    
+                }
+                TickBoss.TickBS(true);
+               
             }  
            else
             {
@@ -40,7 +46,11 @@ namespace PHUC.BasicGame
                 {
                     priceText.text = item.price.ToString();
                 }    
-            }    
+            }
+           
+           
         }
+       
+        
     }
 }
